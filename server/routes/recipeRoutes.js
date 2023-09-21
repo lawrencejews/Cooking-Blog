@@ -4,7 +4,6 @@ const recipeController = require("../controllers/recipeController.js");
 
 
 // App Routes
-
 router.get("/", recipeController.homepage);
 
 
