@@ -20,40 +20,17 @@
 
 <!-- Categories Start-->
 <div class="row row-cols-2 row-cols-lg-6 g-2 g-lg-3 py-4">
-  <a href="#" class="col text-center category__link "> 
-    <div class="category__img shadow">
-      <img src="img/american-food.jpg" loading="lazy" alt="American Food">
-    </div>
-    <div class="pt-1">American Food</div>
-  </a>
 
+  <% if(categories != ""){ %>
+    <% categories.forEach(function(category, index) { %>
   <a href="#" class="col text-center category__link "> 
     <div class="category__img shadow">
-      <img src="img/american-food.jpg" loading="lazy" alt="American Food">
+      <img src="img/<%- category.image %>" loading="lazy" alt="<%- category.name %>">
     </div>
-     <div class="pt-1">American Food</div>
+    <div class="pt-1"><%- category.name %></div>
   </a>
-
-  <a href="#" class="col text-center category__link "> 
-    <div class="category__img shadow">
-      <img src="img/american-food.jpg" loading="lazy" alt="American Food">
-    </div>
-     <div class="pt-1">American Food</div>
-  </a>
-
-  <a href="#" class="col text-center category__link "> 
-    <div class="category__img shadow">
-      <img src="img/american-food.jpg" loading="lazy" alt="American Food">
-    </div>
-     <div class="pt-1">American Food</div>
-  </a>
-
-  <a href="#" class="col text-center category__link "> 
-    <div class="category__img shadow">
-      <img src="img/american-food.jpg" loading="lazy" alt="American Food">
-    </div>
-     <div class="pt-1">American Food</div>
-  </a>
+  <% }) %>
+  <% }%>
 
   <a href="/categories" class="col text-center category__link "> 
     <div class="category__img shadow">
@@ -113,7 +90,17 @@
 </section>
 
 <!-- Submit - Start-->
-
+<section class="px-4 py-5 my-5 text-center">
+<img class="d-block mx-auto mb-4 img-fluid" src="/img/publish-recipe.png" 
+alt="Publish your recipe for FREE today" width="566" height="208" loading="lazy">
+<h1 class="display-5 fw-bold"> Publish your recipe for FREE today</h1>
+<div class="col-lg-6 mx-auto">
+  <p class="lead">  Publish your Recipe infront of thousands of people for free.  </p>
+  <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+    <a href="/submit-recipe" class="btn btn-primary btn-dark btn-lg "> Submit Recipe</a>
+  </div>
+</div>
+</section>
 
 <!-- Submit - End-->
 
