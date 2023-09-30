@@ -4,8 +4,9 @@ mongoose.connect(process.env.MONGODB__URL, { useNewUrlParser: true, useUnifiedTo
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error:"));
 db.once("open", function () {
-  console.log("Database Connected")
+  console.log(`Database Connected`)
 });
 
 // Models
 require("./Category");
+require("./Recipe");

@@ -5,7 +5,7 @@
 
 
   <div class="col-12 col-lg-6">
-    <h1 class="dispaly-5 fw-bold mb-3"> Huge selection of amazing recipe ideas</h1>
+    <h1 class="display-5 fw-bold mb-3"> Huge selection of amazing recipe ideas</h1>
     <p class="lead">
       Explore our huge selection of delicious recipe ideas including; easy desserts, delicious vegan and vegetarian dinner ideas, gorgeous pasta
       recipes, quick bakes, family-friendly meals and gluten-free recipes.
@@ -18,12 +18,15 @@
   </div>
 </div>
 
+
+
 <!-- Categories Start-->
 <div class="row row-cols-2 row-cols-lg-6 g-2 g-lg-3 py-4">
 
   <% if(categories != ""){ %>
     <% categories.forEach(function(category, index) { %>
-  <a href="#" class="col text-center category__link "> 
+      <!-- Link tag to different recipe categories -->
+  <a href="/categories/<%- category.name %>" class="col text-center category__link "> 
     <div class="category__img shadow">
       <img src="img/<%- category.image %>" loading="lazy" alt="<%- category.name %>">
     </div>
@@ -41,6 +44,8 @@
 </div>
 <!-- Categories End-->
 
+
+
 <!-- Latest Start-->
 
 <section class="pb-4 pt-4">
@@ -50,44 +55,21 @@
   </div>
 
   <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
-
-    <a href="/reciepe/#" class="col text-center category__link">
-       <div class="category__img category__img--large shadow">
-      <img src="img/chocolate-banoffe-whoopie-pies.jpg" loading="lazy" alt="Chocolate Banoffe">
-    </div>
-     <div class="pt-1"> Chocolate Banoffe</div>
-    </a>
-
-    <a href="/reciepe/#" class="col text-center category__link">
-       <div class="category__img category__img--large shadow">
-      <img src="img/chocolate-banoffe-whoopie-pies.jpg" loading="lazy" alt="Chocolate Banoffe">
-    </div>
-     <div class="pt-1"> Chocolate Banoffe</div>
-    </a>
-
-    <a href="/reciepe/#" class="col text-center category__link">
-       <div class="category__img category__img--large shadow">
-      <img src="img/chocolate-banoffe-whoopie-pies.jpg" loading="lazy" alt="Chocolate Banoffe">
-    </div>
-     <div class="pt-1"> Chocolate Banoffe</div>
-    </a>
-
-    <a href="/reciepe/#" class="col text-center category__link">
-       <div class="category__img category__img--large shadow">
-      <img src="img/chocolate-banoffe-whoopie-pies.jpg" loading="lazy" alt="Chocolate Banoffe">
-    </div>
-     <div class="pt-1"> Chocolate Banoffe</div>
-    </a>
-
-    <a href="/reciepe/#" class="col text-center category__link">
-       <div class="category__img category__img--large shadow">
-      <img src="img/chocolate-banoffe-whoopie-pies.jpg" loading="lazy" alt="Chocolate Banoffe">
-    </div>
-     <div class="pt-1"> Chocolate Banoffe</div>
-    </a>
+    <% if(food != "") { %>
+      <% food.latest.forEach(function(recipe, index) { %>  
+        <a href="/recipe/<%=recipe._id%>" class="col text-center category__link">
+           <div class="category__img category__img--large shadow">
+          <img src="/uploads/<%=recipe.image%>" loading="lazy" alt="<%=recipe.name%>">
+        </div>
+         <div class="pt-1"><%=recipe.name%></div>
+        </a>
+      <%})%>
+    <%}%>
+  
 
   </div>
 </section>
+
 
 <!-- Submit - Start-->
 <section class="px-4 py-5 my-5 text-center">
